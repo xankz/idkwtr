@@ -1,0 +1,6 @@
+version: "3"
+
+includes:
+    local:
+        taskfile: ./Taskfile.local.yaml
+        optional: true
