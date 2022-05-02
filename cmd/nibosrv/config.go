@@ -12,6 +12,9 @@ type config struct {
 
 	// Port that the server will listen to.
 	Port int `json:"port"`
+
+	// StaticFilesDir is the path to the static files directory.
+	StaticFilesDir string `json:"static_dir"`
 }
 
 func loadConfig() (config, error) {

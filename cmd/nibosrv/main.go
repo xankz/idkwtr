@@ -10,6 +10,7 @@ import (
 var flagHost *string = flag.String("h", "localhost", "host to listen to")
 var flagPort *int = flag.Int("p", 3300, "port to listen on")
 var flagConfig *string = flag.String("c", "", "path to configuration file (json)")
+var flagStaticDir *string = flag.String("s", "", "path to static files directory")
 
 func main() {
 	flag.Parse()
@@ -26,6 +27,7 @@ func main() {
 			Host: conf.Host,
 			Port: conf.Port,
 		},
+		StaticDir: conf.StaticFilesDir,
 	}
 
 	// Create and start server.
