@@ -4,10 +4,14 @@ import (
 	"embed"
 	"fmt"
 	"html/template"
+	"io"
 	"io/fs"
 	"io/ioutil"
 	"strings"
 )
+
+// baseTemplateName refers to the name of the defined "base" template that will be rendered.
+const baseTemplateName string = "base"
 
 var (
 	//go:embed templates/partials/*.tmpl
@@ -18,6 +22,16 @@ var (
 
 	templateFuncMap template.FuncMap = make(template.FuncMap)
 )
+
+// templates is a wrapper over a map of templates with function execute() for convenience.
+type templates map[string]*template.Template
+
+// execute is similar to (template.Template).ExecuteTemplate() but automatically renders the named
+// base template internally (which holds the final result). The consumer therefore only needs to
+// pass the filepath of the view to be rendered.
+func (t templates) execute(wr io.Writer, view string, data interface{}) error {
+	return t[view].ExecuteTemplate(wr, baseTemplateName, data)
+}
 
 // parseTemplates creates a map of templates identified by the filenames recorded in views. Each
 // template is cloned from a root template holding definitions from partials, before being appended

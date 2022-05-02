@@ -4,7 +4,6 @@ package chi
 
 import (
 	"fmt"
-	"html/template"
 	"net/http"
 
 	"github.com/elijk/nibo"
@@ -29,7 +28,7 @@ type Configuration struct {
 // Server is a Chi web server that interfaces with the main application.
 type Server struct {
 	r        chi.Router
-	tmpl     map[string]*template.Template
+	tmpl     templates
 	services Services
 	config   Configuration
 }
