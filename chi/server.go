@@ -94,6 +94,7 @@ func setupServer(s *Server, sdir string) error {
 
 	// Setup Chi routes.
 	s.r.Get("/", s.handleIndex)
+	s.r.HandleFunc("/register", s.handleRegister)
 
 	return nil
 }

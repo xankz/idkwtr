@@ -1,3 +1,11 @@
-.float-right {
-    float: right;
+main > form:first-child {
+    margin-top: 1.5rem;
+}
+
+fieldset {
+    padding: 0.75em;
+}
+
+fieldset > div {
+    margin-bottom: 0.8em;
 }

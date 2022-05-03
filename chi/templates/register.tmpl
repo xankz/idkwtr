@@ -1,0 +1,34 @@
+{{ define "main" }}
+<form autocomplete="off" method="post">
+    <fieldset>
+        <div>
+            <label for="display-name-field">Display Name:</label>
+            <input
+                type="text"
+                placeholder="Minimum 3 characters..."
+                minlength="3"
+                id="display-name-field"
+                name="display_name"
+                required
+                autofocus
+            />
+        </div>
+        <div>
+            <label for="email-field">Email address:</label>
+            <input type="email" id="email-field" name="email_address" required />
+        </div>
+        <div>
+            <label for="password-field">Password:</label>
+            <input
+                type="password"
+                id="password-field"
+                name="password"
+                minlength="3"
+                placeholder="Minimum 3 characters..."
+                required
+            />
+        </div>
+        <input type="submit" value="Register" />
+    </fieldset>
+</form>
+{{ end }}
