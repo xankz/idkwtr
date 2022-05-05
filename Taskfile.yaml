@@ -4,3 +4,8 @@ includes:
     local:
         taskfile: ./Taskfile.local.yaml
         optional: true
+
+tasks:
+    migrate:
+        cmds:
+            - migrate -database sqlite3://idkwtr.sqlite -path migrations {{.CLI_ARGS}}
