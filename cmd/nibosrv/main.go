@@ -4,7 +4,7 @@ import (
 	"flag"
 	"fmt"
 
-	"github.com/elijk/nibo/chi"
+	"github.com/xankz/idkwtr/chi"
 )
 
 var flagHost *string = flag.String("h", "localhost", "host to listen to")
@@ -36,6 +36,6 @@ func main() {
 		panic(err)
 	}
 
-	fmt.Printf("Nibo server is now listening on %s:%d...\n", conf.Host, conf.Port)
+	fmt.Printf("idkwtr server is now listening on %s:%d...\n", conf.Host, conf.Port)
 	srv.Start()
 }

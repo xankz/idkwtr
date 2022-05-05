@@ -1,4 +1,4 @@
-package nibo
+package idkwtr
 
 import "testing"
 

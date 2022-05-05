@@ -1,4 +1,4 @@
-module github.com/elijk/nibo
+module github.com/xankz/idkwtr
 
 go 1.18
 

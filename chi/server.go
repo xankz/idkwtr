@@ -1,4 +1,4 @@
-// Package chi exposes a web server that interfaces with the nibo application. The main dependency
+// Package chi exposes a web server that interfaces with the idkwtr application. The main dependency
 // is go-chi/chi for the router, along with html/template for rendering.
 package chi
 
@@ -6,14 +6,14 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/elijk/nibo"
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
+	"github.com/xankz/idkwtr"
 )
 
 // Services is a group of domain services to facilitate processing client actions.
 type Services struct {
-	UserRepository nibo.UserRepository
+	UserRepository idkwtr.UserRepository
 }
 
 // Configuration represents the server-specific configuration of a server.

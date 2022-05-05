@@ -1,6 +1,6 @@
-# nibo
+# idkwtr
 
-nibo is a fiction-writing app heavily inspired by Wattpad.
+idkwtr is a fiction-writing app heavily inspired by Wattpad.
 
 ## Dependencies
 
